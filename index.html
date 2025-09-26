@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Shifa 💖</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: radial-gradient(circle at top, #ffdee9, #b5fffc);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255,255,255,0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.2);
+    max-width: 450px;
+    position: relative;
+}
+
+h1 {
+    color: #ff4d6d;
+    font-size: 36px;
+    margin-bottom: 10px;
+    animation: pop 1s ease forwards;
+}
+
+@keyframes pop {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
+    background-color: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff1a4d;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff4d6d;
+    animation: fade 1s ease forwards;
+}
+
+@keyframes fade {
+    0% { opacity: 0; transform: translateY(20px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    color: #ff4d6d;
+    animation: float 3s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-600px) rotate(360deg); opacity: 0; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Shifa 💖</h1>
+    <p>I want to tell you something… click below to see a little surprise 😎</p>
+    <button onclick="showLove()">Reveal My Love 💌</button>
+    <p class="message" id="loveMessage"></p>
+</div>
+
+<script>
+// Floating hearts
+setInterval(() => {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.fontSize = (10 + Math.random()*30) + 'px';
+    heart.innerText = '💖';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 4000);
+}, 200);
+
+// Love messages sequence
+const loveMessages = [
+    "From the moment I met you… 🌸",
+    "I felt something special 💕",
+    "You make my days brighter 😎",
+    "I… really Love you, Shifa ❤️",
+    "And I hope you feel my love too 💌"
+];
+
+let index = 0;
+function showLove() {
+    if(index < loveMessages.length) {
+        document.getElementById("loveMessage").innerText = loveMessages[index];
+        index++;
+    } else {
+        document.getElementById("loveMessage").innerText = "💖 Forever yours, Shifa 💖";
+    }
+}
+</script>
+
+</body>
+</html>
 
